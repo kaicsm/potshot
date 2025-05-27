@@ -1,0 +1,13 @@
+[package]
+name = "baller"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+macroquad = "0.4"
+
+[package.metadata.android.activity_attributes]
+"android:exported" =  "true"
+
+[package.metadata.android]
+assets = "assets/"
