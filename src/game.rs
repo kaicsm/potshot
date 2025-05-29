@@ -2,7 +2,7 @@ use macroquad::prelude::*;
 use std::collections::HashMap;
 
 use crate::types::{InputState, PlayerId, PlayerGroup, GameState};
-use crate::constants::*;
+use crate::constants::*; // Importa todas as constantes
 use crate::colors::game_colors;
 use crate::config::{BallDefinition, get_ball_definitions};
 use crate::ball::Ball;
@@ -10,6 +10,7 @@ use crate::pocket::Pocket;
 use crate::cue::Cue;
 
 pub struct Game {
+    // Dynamic dimensions
     pub ball_radius: f32,
     pub table_border_thickness: f32,
     pub cue_max_length: f32,
@@ -104,7 +105,7 @@ impl Game {
             button_width,
             button_height,
         );
-        self.game_state = GameState::Aiming;
+        self.game_state = GameState::Aiming; // Should be aiming after init
     }
     
     fn calculate_and_set_dimensions(&mut self) {
@@ -154,7 +155,7 @@ impl Game {
         self.pockets.push(Pocket::new(off, self.table_height - off, pr));
         self.pockets.push(Pocket::new(self.table_width - off, self.table_height - off, pr));
         
-        let mid_pr = pr * 0.9;
+        let mid_pr = pr * 0.95;
         self.pockets.push(Pocket::new(self.table_width / 2.0, off - pr * 0.4, mid_pr));
         self.pockets.push(Pocket::new(self.table_width / 2.0, self.table_height - off + pr * 0.4, mid_pr));
     }

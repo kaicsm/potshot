@@ -17,7 +17,7 @@ use game::Game;
 
 fn window_conf() -> Conf {
     Conf {
-        window_title: "Baller Rust Snooker".to_owned(),
+        window_title: "PotShot".to_owned(),
         fullscreen: true,
         high_dpi: true,
         ..Default::default()
